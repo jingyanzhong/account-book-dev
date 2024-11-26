@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9e18812e-bdd3-465b-b512-cfcc46180e4b",
+		"_postman_id": "d43d52c4-57b8-4cee-94ca-95301aa1de7a",
 		"name": "journalRecord",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -79,6 +79,11 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
+							"key": "key",
+							"value": "1",
+							"type": "default"
+						},
+						{
 							"key": "txTime",
 							"value": "2024-11-17 12:11:20",
 							"type": "default"
@@ -100,13 +105,13 @@
 						},
 						{
 							"key": "memo",
-							"value": "大蛋餅",
+							"value": "小蛋餅",
 							"type": "default"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:8080/account-book/api/journalRecord/add",
+					"raw": "localhost:8080/account-book/api/journalRecord/modify",
 					"host": [
 						"localhost"
 					],
@@ -115,7 +120,7 @@
 						"account-book",
 						"api",
 						"journalRecord",
-						"add"
+						"modify"
 					]
 				}
 			},
@@ -137,34 +142,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "txTime",
-							"value": "2024-11-17 12:11:20",
-							"type": "default"
-						},
-						{
-							"key": "debit",
-							"value": "2101",
-							"type": "default"
-						},
-						{
-							"key": "credit",
-							"value": "1102",
-							"type": "default"
-						},
-						{
-							"key": "amount",
-							"value": "60",
-							"type": "default"
-						},
-						{
-							"key": "memo",
-							"value": "大蛋餅",
+							"key": "key",
+							"value": "1",
 							"type": "default"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:8080/account-book/api/journalRecord/add",
+					"raw": "localhost:8080/account-book/api/journalRecord/remove",
 					"host": [
 						"localhost"
 					],
@@ -173,7 +158,7 @@
 						"account-book",
 						"api",
 						"journalRecord",
-						"add"
+						"remove"
 					]
 				}
 			},
@@ -196,7 +181,7 @@
 					"urlencoded": [
 						{
 							"key": "key",
-							"value": "1",
+							"value": "2",
 							"type": "default"
 						}
 					],
@@ -236,13 +221,7 @@
 				],
 				"body": {
 					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "key",
-							"value": "1",
-							"type": "default"
-						}
-					],
+					"urlencoded": [],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -250,7 +229,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/account-book/api/journalRecord/find",
+					"raw": "localhost:8080/account-book/api/journalRecord/findAll",
 					"host": [
 						"localhost"
 					],
@@ -259,7 +238,7 @@
 						"account-book",
 						"api",
 						"journalRecord",
-						"find"
+						"findAll"
 					]
 				}
 			},
@@ -281,8 +260,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "key",
-							"value": "1",
+							"key": "year",
+							"value": "2024",
+							"type": "default"
+						},
+						{
+							"key": "month",
+							"value": "11",
 							"type": "default"
 						}
 					],
@@ -293,7 +277,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/account-book/api/journalRecord/find",
+					"raw": "localhost:8080/account-book/api/journalRecord/findByYearMonth",
 					"host": [
 						"localhost"
 					],
@@ -302,7 +286,7 @@
 						"account-book",
 						"api",
 						"journalRecord",
-						"find"
+						"findByYearMonth"
 					]
 				}
 			},
@@ -322,13 +306,7 @@
 				],
 				"body": {
 					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "key",
-							"value": "1",
-							"type": "default"
-						}
-					],
+					"urlencoded": [],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -336,7 +314,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/account-book/api/journalRecord/find",
+					"raw": "localhost:8080/account-book/api/journalRecord/list/yearMonth",
 					"host": [
 						"localhost"
 					],
@@ -345,7 +323,8 @@
 						"account-book",
 						"api",
 						"journalRecord",
-						"find"
+						"list",
+						"yearMonth"
 					]
 				}
 			},
