@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9dcd36a3-90a0-4054-b142-efd6bdf1de0d",
+		"_postman_id": "649bae49-b317-4b79-8c1e-6d9a57e82f92",
 		"name": "journalRecord",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -42,6 +42,11 @@
 						},
 						{
 							"key": "memo",
+							"value": "一般消費",
+							"type": "default"
+						},
+						{
+							"key": "remark",
 							"value": "大蛋餅",
 							"type": "default"
 						}
@@ -105,6 +110,11 @@
 						},
 						{
 							"key": "memo",
+							"value": "一般消費",
+							"type": "default"
+						},
+						{
+							"key": "remark",
 							"value": "小蛋餅",
 							"type": "default"
 						}
@@ -344,13 +354,7 @@
 				],
 				"body": {
 					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "key",
-							"value": "1",
-							"type": "default"
-						}
-					],
+					"urlencoded": [],
 					"options": {
 						"raw": {
 							"language": "json"
