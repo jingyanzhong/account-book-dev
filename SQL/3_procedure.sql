@@ -6,14 +6,16 @@ RETURNS TABLE (
     year INT,
     month INT,
     code character varying(4),
+    name character varying(4),
     sum_amount NUMERIC
 ) as $$
 BEGIN
     RETURN QUERY
     SELECT
         to_char(j.tx_time, 'YYYY')::INT as year,
-        to_char(j.tx_time, 'MM')::INT as month, 
-        s.code as code,
+        to_char(j.tx_time, 'MM')::INT as month,
+        s.code,
+        s.name,
         SUM(amount) as sum_amount
     from
         subject s, journal_record j
@@ -35,14 +37,16 @@ RETURNS TABLE (
     year INT,
     month INT,
     code character varying(4),
+    name character varying(4),
     sum_amount NUMERIC
 ) as $$
 BEGIN
     RETURN QUERY
     SELECT
         to_char(j.tx_time, 'YYYY')::INT as year,
-        to_char(j.tx_time, 'MM')::INT as month, 
-        s.code as code,
+        to_char(j.tx_time, 'MM')::INT as month,
+        s.code,
+        s.name,
         SUM(amount) as sum_amount
     from
         subject s, journal_record j
