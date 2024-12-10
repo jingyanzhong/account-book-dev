@@ -1,6 +1,6 @@
 
 
--- 取得每月貸項加總
+-- 取得每月借項加總
 CREATE OR REPLACE FUNCTION get_monthly_summary_debit(p_year INT, p_month INT)
 RETURNS TABLE (
     year INT,
@@ -31,7 +31,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 
--- 取得每月借項加總
+-- 取得每月貸項加總
 CREATE OR REPLACE FUNCTION get_monthly_summary_credit(p_year INT, p_month INT)
 RETURNS TABLE (
     year INT,
