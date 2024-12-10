@@ -17,10 +17,11 @@ BEGIN
         s.code,
         s.name,
         SUM(amount) as sum_amount
-    from
+    FROM
         subject s, journal_record j
     WHERE
         j.debit = s.code AND
+        LEFT(j.debit, 1) = '2' AND
         to_char(j.tx_time, 'YYYY')::INT = p_year AND
         to_char(j.tx_time, 'MM')::INT = p_month
     GROUP BY
@@ -48,10 +49,11 @@ BEGIN
         s.code,
         s.name,
         SUM(amount) as sum_amount
-    from
+    FROM
         subject s, journal_record j
     WHERE
         j.credit = s.code AND
+        LEFT(j.credit, 1) = '1' AND
         to_char(j.tx_time, 'YYYY')::INT = p_year AND
         to_char(j.tx_time, 'MM')::INT = p_month
     GROUP BY
